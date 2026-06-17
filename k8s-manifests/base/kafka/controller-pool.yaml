@@ -1,4 +1,4 @@
-apiVersion: kafka.strimzi.io/v1beta2
+apiVersion: kafka.strimzi.io/v1
 kind: KafkaNodePool
 metadata:
   name: superapp-controller-knp
@@ -10,6 +10,5 @@ spec:
     - controller
   storage:
     type: persistent-claim
-    size: 10Gi
-    class: ocs-storagecluster-ceph-rbd
+    size: 5Gi
     deleteClaim: false

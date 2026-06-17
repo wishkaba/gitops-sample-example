@@ -1,12 +1,12 @@
-apiVersion: argoproj.io/v1alpha1
+piVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: sample-kafka-dev
-  namespace: openshift-gitops
+  namespace: default
 spec:
   project: sample-project
   sources:
-    - repoURL: https://github.com/abduselamh/gitops-sample-example.git
+    - repoURL: https://github.com/kasahun-welela/gitops-sample-example.git
       targetRevision: HEAD
       path: k8s-manifests/overlays/dev/kafka
       kustomize: {}
@@ -18,4 +18,4 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
